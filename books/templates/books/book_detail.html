@@ -1,9 +1,10 @@
 {% extends '_base.html' %}
+{% load book_tags %}
 {% block page_title %}جزئیات کتاب{{ book.title|capfirst }}{% endblock %}
 {% block content %}
 
     <h1>{{ book.title|capfirst }}</h1>
-    <p>{{ book.description|linebreaks }}</p>
+    <p>{{ book.description|to_lowercase:'متن اصلی'|linebreaks }}</p>
     <p>{{ book.author }}</p>
     <h4>{{ book.price }}</h4>
     <br>
